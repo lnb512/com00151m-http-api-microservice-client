@@ -1,8 +1,19 @@
+/**
+ * Author: lnb512@york.ac.uk
+ * Project: COM00151M Final Project
+ * Date: 08.10.2021
+ * 
+ * REST API client to POST (REQUEST) student details to the HTTP
+ * Microservices REST API
+ * 
+ */
+
 import { Component } from 'react';
 import React  from 'react';
 import './App.css';
 
 class App extends Component {
+  
   constructor(props) {
     super(props)
     this.state = {
@@ -12,11 +23,11 @@ class App extends Component {
     }
   }
 
+  // POST REQUEST - student details to HTTP Microservice
   handleSubmit = (event) => {
     event.preventDefault(); 
   
     const submitStudentDetails = async (event) => {
-
       const res = await fetch('http://localhost:3000', {
         method: 'POST',
         headers: {
@@ -29,34 +40,30 @@ class App extends Component {
           studentNumber: event.target.snumber.value
         })
       });
-
-      const data = await res.json()
-      
-      console.log('Response from HTTP MICROSERVICE API ', data);
+      alert(res.statusText);
     }
-    submitStudentDetails(event); 
 
-
-
+    submitStudentDetails(event);  
   } 
 
+  // Input Form HTML
   render () {
-    return( 
+    return ( 
       <div className="container">
       <div className="form-control"> 
         <h1>COM00151M RFC7807 HTTP MICROSERVICE CLIENT</h1>
         <form onSubmit={ this.handleSubmit}>
           <div>
-          <label>First Name</label>
-          <input type="text" id="fname" name="fname" />
+            <label>First Name</label>
+            <input type="text" id="fname" name="fname" />
           </div>
           <div>
-          <label>Last Name</label>
-          <input type="text" id="lname" name="lname" /> 
+            <label>Last Name</label>
+            <input type="text" id="lname" name="lname" /> 
           </div>
           <div>
-          <label>Student Number</label>
-          <input type="text" id="snumber" name="snumber" /> 
+            <label>Student Number</label>
+            <input type="text" id="snumber" name="snumber" /> 
           </div>
           <button className="btn" type="submit">Submit</button>
         </form>
