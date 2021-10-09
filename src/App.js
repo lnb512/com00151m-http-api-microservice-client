@@ -1,10 +1,13 @@
-/**
+ /**
  * Author: lnb512@york.ac.uk
  * Project: COM00151M Final Project
  * Date: 08.10.2021
  * 
- * REST API client to POST (REQUEST) student details to the HTTP
- * Microservices REST API
+ * This HTTP REST MICROSERVICE API client sends student details as a POST (REQUEST) to the HTTP REST MICROSERVICE API (service).   
+ * Successful validation of student details results in a 200 HTTP status code RESPONSE from the HTTP REST MICROSERVICE API (service).
+ * 
+ * Validation errors result in a RFC7807 specification 400 HTTP error response.   
+ * The error will contain a "Problem Details" JSON payload with detailed and human-readable explanation for the error.  
  * 
  */
 
@@ -23,7 +26,7 @@ class App extends Component {
     }
   }
 
-  // POST REQUEST - student details to HTTP Microservice
+  // POST REQUEST - student details to HTTP REST Microservice API
   handleSubmit = (event) => {
     event.preventDefault(); 
   
@@ -72,6 +75,5 @@ class App extends Component {
   ); 
   }
 }
-
 
 export default App;
