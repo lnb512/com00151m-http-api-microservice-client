@@ -3,8 +3,10 @@
  * Project: COM00151M Final Project
  * Date: 08.10.2021
  * 
- * This HTTP REST MICROSERVICE API client sends student details as a POST (REQUEST) to the HTTP REST MICROSERVICE API (service).   
- * Successful validation of student details results in a 200 HTTP status code RESPONSE from the HTTP REST MICROSERVICE API (service).
+ * This HTTP REST MICROSERVICE API client sends student details as a RFC7807 Problem Details "application/problem+json" 
+ * Content-Type POST (REQUEST) to the HTTP REST MICROSERVICE API (service).   
+ * 
+ * Successful validation of student details results in a 200 RFC7807 specification HTTP status code RESPONSE from the HTTP REST MICROSERVICE API (service).
  * 
  * Validation errors result in a RFC7807 specification 400 HTTP error response.   
  * The error will contain a "Problem Details" JSON payload with detailed and human-readable explanation for the error.  
@@ -34,7 +36,7 @@ class App extends Component {
       const res = await fetch('http://localhost:3000', {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
+          'Accept': 'application/problem+json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -54,7 +56,7 @@ class App extends Component {
     return ( 
       <div className="container">
       <div className="form-control"> 
-        <h1>COM00151M RFC7807 HTTP MICROSERVICE CLIENT</h1>
+        <h1>COM00151M RFC7807 HTTP REST MICROSERVICE API CLIENT</h1>
         <form onSubmit={ this.handleSubmit}>
           <div>
             <label>First Name</label>

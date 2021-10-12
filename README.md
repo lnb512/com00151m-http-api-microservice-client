@@ -1,9 +1,10 @@
 # COM00151M final project repository.
-# It contains source code for the HTTP Microservices REST API client application.
+# It contains source code for the HTTP REST Microservices API client application.
 
-## The client send a POST Request of a student's details (first name, last name and student number) to the HTTP Microservice for validation.  
+## The client send a POST Request of a student's details (first name, last name and student number) to the HTTP REST Microservice API for validation. The request body is of Content-Type "application/problem+json". 
 
-## The HTTP Microservice leverages the Problem Details RFC 7807 HTTP specification to return detailed HTTP errors to the client application, for improved troubleshooting. 
+## The HTTP REST Microservice API leverages the Problem Details RFC 7807 HTTP specification to prepare and present responses back to the client.
+## Error responses back to the client will be detailed, thus leading to improved client side troubleshooting. 
 
 
 ## Running Locally
