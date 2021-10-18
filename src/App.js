@@ -33,11 +33,11 @@ class App extends Component {
     event.preventDefault(); 
   
     const submitStudentDetails = async (event) => {
-      const res = await fetch('http://localhost:3000', {
+      const res = await fetch('http://localhost:3001', {
         method: 'POST',
         headers: {
           'Accept': 'application/problem+json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/problem+json'
         },
         body: JSON.stringify({
           firstName: event.target.fname.value,
