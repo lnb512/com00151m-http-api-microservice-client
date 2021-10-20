@@ -35,8 +35,9 @@ class App extends Component {
     const submitStudentDetails = async (event) => {
       const res = await fetch('http://localhost:3001', {
         method: 'POST',
+        // ensure client and server default to RFC7808 communication
         headers: {
-          'Accept': 'application/problem+json',
+          'Accept': 'application/problem+json',     
           'Content-Type': 'application/problem+json'
         },
         body: JSON.stringify({
